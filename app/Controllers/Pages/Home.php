@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Pages;
 use \App\Utils\View;
+use \App\Models\Entity\Organization;
 
 class Home extends Page{
   /**
@@ -9,10 +10,11 @@ class Home extends Page{
    * @return string 
   */
   public static function index() {
+    $obOrganization = new Organization;
     $content = View::render('/Pages/home', [
-      'name' => 'Codetech Soluções em Software',
-      'description'=> 'Tornamos suas idéias de negócio em realidade',
-      'site'=> 'https://www.codetechbr.net.br',
+      'name' => $obOrganization->name,
+      'description'=> $obOrganization->description,
+      'site'=> $obOrganization->website,
     ]);
 
     return parent::indexPage('Codetech Soluções em Software', $content);
