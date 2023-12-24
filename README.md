@@ -6,6 +6,7 @@
 
 - PHP
 - HTML (views)
+- Bootstrap
 
 ## Stay in touch:
 
