@@ -15,11 +15,19 @@ class View {
   /**
    * Method that return a rendered view content
    * @param string $view
+   * @param array $data = (string/numeric)
    * @return string 
   */
-  public static function render($view) {
+  public static function render($view, $data = []) {
     // View content
     $contentView = self::getContentView($view);
-    return $contentView;
+    
+    // array keys
+    $keys = array_keys($data);
+    $keys = array_map(function($item) {
+      return '{{'.$item.'}}';
+    }, $keys);
+
+    return str_replace($keys, array_values($data), $contentView);
   }
 }
