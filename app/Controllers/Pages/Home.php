@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\Controllers\Pages;
+use \App\Utils\View;
 
 class Home {
   /**
@@ -8,6 +9,6 @@ class Home {
    * @return string 
   */
   public static function index() {
-    return 'Hello World';
+    return View::render('/Pages/home');
   }
 }
