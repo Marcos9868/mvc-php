@@ -5,6 +5,7 @@
 ## Stacks:
 
 - PHP
+- HTML (views)
 
 ## Stay in touch:
 
